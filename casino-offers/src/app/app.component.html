@@ -1,0 +1,22 @@
+<div class="container-fluid">
+    <div class="row mt-4" *ngIf="!hasError; else errorTemplate">
+        <div class="col-md-4" *ngFor="let offer of mappedOffers">
+            <lib-ngx-offers-card-gjorgievska-emilija
+            [name]="offer.name"
+            [logo]="offer.logo"
+            [rating]="offer.rating"
+            [depositBonusTitle]="offer.depositBonusTitle"
+            [depositBonusDescription]="offer.depositBonusDescription"
+            [coinsTitle]="offer.coinsTitle"
+            [coinsValue]="offer.coinsValue"
+            [buttonText]="offer.buttonText"
+            [websiteLink]="offer.websiteLink"
+            ></lib-ngx-offers-card-gjorgievska-emilija>
+        </div>
+    </div>
+    <ng-template #errorTemplate>
+        <div class="alert alert-danger m-3" role="alert">
+            Error occured. Please try again later.
+        </div>
+    </ng-template>
+</div>
